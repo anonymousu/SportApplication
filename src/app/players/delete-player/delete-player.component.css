@@ -1,0 +1,9 @@
+.style1 td {
+    width: 150px;
+    text-align: center;
+    padding: 10px;
+  }
+  a{
+    padding: 10px;
+    display: inline-block;
+  }

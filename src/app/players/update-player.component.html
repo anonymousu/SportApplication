@@ -1,0 +1,102 @@
+<form #userForm="ngForm" class="form-horizontal" (ngSubmit) = "updatePlayer(player.id)">
+    <!--{{userForm.value | json}}
+    <hr/>
+    {{player | json}}-->
+    <div [hidden]="!isSubmitted">
+        <h4>Updated Successfully!!!</h4>
+    </div>
+    <div class="panel panel-primary" *ngIf='player'>
+        <div class="panel-heading">
+            <h3>Update Player</h3>
+        </div>
+        <div class="panel-body">
+            <div class = "form-group" [class.has-error]="userName.touched && userName.invalid"
+                                      [class.has-success]="userName.valid" >
+                <label for="userName" class="col-xs-2 control-label">User Name: </label>
+                <div class="col-xs-8"> 
+                <input type="text" required class="form-control" id="userName" name="userName" [(ngModel)]="player.userName" #userName="ngModel" >
+                <span class="help-block" *ngIf="userName.touched && userName.invalid">
+                    User Name is required
+                </span>
+                </div>
+            </div>
+            <div class="form-group" [class.has-error]="firstName.touched && firstName.invalid"
+                                     [class.has-success]="firstName.valid" >
+              <label for="firstName" class="col-xs-2 control-label"> First Name: </label>
+              <div class="col-xs-8">
+              <input class="form-control" required type="text" id="firstName" name="firstName" #firstName=ngModel [(ngModel)]="player.firstName">
+              <span class="help-block" *ngIf="firstName.touched && firstName.invalid">
+                  First Name is required
+              </span>
+              </div>
+            </div>
+            <div class="form-group" [class.has-error]="lastName.touched && lastName.invalid"
+                                    [class.has-success]="lastName.valid" >
+             <label for="lastName" class="col-xs-2 control-label"> Last Name: </label>
+             <div class="col-xs-8">
+             <input class="form-control" required type="text" id="lastName" name="lastName" #lastName=ngModel [(ngModel)]="player.lastName">
+             <span class="help-block" *ngIf="lastName.touched && lastName.invalid">
+                Last Name is required
+            </span>
+             </div>
+            </div>
+        <div class="form-group" [class.has-error]="email.invalid && email.touched" 
+                                [class.has-success]="email.valid">
+            <label for="email" class="col-xs-2 control-label"> Email: </label>
+            <div class="col-xs-8">
+            <input class="form-control" required email type="text" id="email" name="email" #email="ngModel" [(ngModel)]="player.email">
+            <span class="help-block" *ngIf="email.errors?.required && email.touched">
+                Email is required
+            </span>
+            <span class="help-block" *ngIf="email.errors?.email && email.touched">
+                Email is invalid
+            </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2 control-label checkbox"> Add Photo (Optional) </label>
+            <div class="col-xs-1">
+            <input type="checkbox" name="addPhoto" value="Add Photo" #addPhoto [(ngModel)]="player.addPhoto">                   
+            </div>
+        </div>
+        <div class="form-group" *ngIf="addPhoto.checked" [class.has-error]="photo.touched && photo.invalid" [class.has-success]="photo.valid" >
+            <label for="photo" class="col-xs-2 control-label"> Photo: </label>
+            <div class="col-xs-8">
+            <input class="form-control" required type="file" id="photo" (change)="onFileChanged($event)" 
+            name="photo" #photo=ngModel [(ngModel)]="player.photo" accept="image/*">
+            <img [src]="imgURL" height="200" *ngIf="imgURL">
+            <span class="help-block" *ngIf="photo.touched && photo.invalid">
+                Photo is required
+            </span>
+            </div>
+            <!--<button class="btn btn-primary" (click)="onUpload()" value="Upload">Upload</button>-->
+            <hr/>
+            <!--Received image: {{ receivedImageData | json }}
+            <img [src]="convertedImage" >-->
+        </div>
+        <div class="form-group" [class.has-error]="address.touched && address.invalid"
+                                [class.has-success]="address.valid" >
+            <label for="address" class="col-xs-2 control-label"> Address: </label>
+            <div class="col-xs-8">
+            <input class="form-control" required type="text" id="address" #address="ngModel" name="address" [(ngModel)]="player.address">
+            <span class="help-block" *ngIf="address.touched && address.invalid">
+                Address is required
+            </span>
+            </div>
+        </div>
+        <div class="form-group" [class.has-error]="phoneNo.touched && phoneNo.invalid"
+                                [class.has-success]="phoneNo.valid" >
+            <label for="phoneNo" class="col-xs-2 control-label"> Phone Number: </label>
+            <div class="col-xs-8">
+            <input class="form-control" required type="text" id="phoneNo" name="phoneNo" #phoneNo="ngModel" [(ngModel)]="player.phoneNo">
+            <span class="help-block" *ngIf="phoneNo.touched && phoneNo.invalid">
+                Phone Number is required
+            </span>
+            </div>
+        </div>
+        </div>
+    <div class="panel-footer">
+        <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid" >Submit</button>
+    </div>
+    </div>
+</form>

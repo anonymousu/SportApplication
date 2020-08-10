@@ -1,0 +1,53 @@
+body, html {
+    height: 100%;
+  }
+ .wrap{
+  position:relative;
+  width: 100%;
+  height: 100%;
+  background-color: #e9e9e9;
+ }
+
+.style1{
+    /* The image used */
+    margin-top:50px;
+    background-image: url('/assets/img/sportsImg.jpg');
+
+    /*background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg");*/
+    /* Full height */
+    height: 100%;
+    width: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #e9e9e9;
+  }
+  .bgimg {
+    z-index: -1;
+    overflow: hidden;
+    left: 70px;
+    position: relative;
+    display: block;
+}
+  .blockico {
+    position:absolute;
+    background-image: url('/assets/img/imagebg.jpg');
+    top:-50%;}
+
+  .bg{
+    width: 100%;
+    height: 100%;
+    background: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg") no-repeat center;
+    background-size: 100% 100%;
+    background-position: top center;
+  }
+
+  #background {
+    width: 100%;
+    height: 100%;
+    background: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg") no-repeat;
+    background-size: cover;
+    color: white;
+    text-align: center;
+}

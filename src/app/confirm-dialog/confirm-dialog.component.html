@@ -1,0 +1,22 @@
+ <!-- <div>
+   <div class="content-conainer">
+    <mat-icon id="close-icon" (click)="onDismiss()">close</mat-icon>
+    <span class="content-span full-width">{{data.title}}</span>
+    </div>
+    <button mat-flat-button id="no-button" (click)="onDismiss()" [mat-dialog-close]="false">NO</button>
+    <button mat-flat-button id="yes-button" (click)="onConfirm()" [mat-dialog-close]="true">YES</button>
+</div>-->
+
+ <mat-card fxLayoutGap>
+
+    <mat-icon id="close-icon" class="pull-right pointerCursor" (click)="onDismiss()">close</mat-icon>
+
+    <p mat-dialog-title>{{data.title}}</p>
+    <p mat-display-2>{{data.message}}</p>
+
+
+    <div mat-dialog-actions>
+        <button mat-button (click)="onDismiss()">No</button>
+        <button mat-raised-button color="primary" (click)="onConfirm()">Yes</button>
+    </div>
+</mat-card> 

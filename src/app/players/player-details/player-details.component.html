@@ -1,0 +1,115 @@
+<div class="panel panel-primary" *ngIf='player' >
+    <div class="panel-heading">
+        <h3 class = "panel-title">
+            {{player.userName}}
+        </h3>
+    </div>
+    <div class = "panel-body">
+        <div class = "col-xs-10">
+            <div class = "row vertical-align">
+                <div class = "col-xs-4">
+                    <img class="imageClass" [src] = "photo" />
+                </div>
+                <div class="col-xs-8">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            id
+                        </div>
+                        <div class="col-xs-6">
+                            : {{player.id}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            User Name
+                        </div>
+                        <div class="col-xs-6">
+                            : {{player.userName}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            First Name
+                        </div>
+                        <div class="col-xs-6">
+                            : {{player.firstName}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            Last Name
+                        </div>
+                        <div class="col-xs-6">
+                            : {{player.lastName}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            Address
+                        </div>
+                        <div class="col-xs-6">
+                            : {{player.address}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            Phone
+                        </div>
+                        <div class="col-xs-6">
+                            : {{player.phoneNo}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            Email
+                        </div>
+                        <div class="col-xs-6">
+                            : {{player.email}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            Rating
+                        </div>
+                        <div class="col-xs-6">
+                            : {{player.rating}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            No Of Matches Played
+                        </div>
+                        <div class="col-xs-6">
+                            : {{player.noOfMatchesPlayed}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            Matches Lost
+                        </div>
+                        <div class="col-xs-6">
+                            : {{player.matchesLost}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            Matches Won
+                        </div>
+                        <div class="col-xs-6">
+                            : {{player.matchesWon}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <!--[routerLink]="['/update',{player.id}]"-->
+    <div class = "panel-footer btn-toolbar">
+        <a class="btn btn-primary" [routerLink]="['/players']"> Back To List </a>
+        <a class="btn btn-primary" [routerLink]="['/update',player.id]"> Update </a>
+        <button class="btn btn-primary pull-right" (click)="deletePlayer(player.id)">Delete</button>
+    </div>   
+</div>
+<div *ngIf="!player">
+    {{statusMessage}}
+</div>

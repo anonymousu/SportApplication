@@ -1,0 +1,19 @@
+.confirm-dialog-container .mat-dialog-container{
+    border-radius: .25cm .25cm .4cm .4cm;
+    padding: 0px}
+
+    .confirm-dialog-container .content-container{
+    margin: 5px 5px 15px 5px;
+    color: white;
+    display: flex;
+    }
+    
+    .confirm-dialog-container #close-icon{
+    margin-right: auto;
+    order: 2;
+    font-weight: bolder;
+    }
+
+    .btn-toolbar{
+        margin-left: 0px;
+    }

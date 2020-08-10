@@ -1,0 +1,33 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Search Player</h2>
+  </div>
+  <div class="panel-body">
+    <div class="row col-xs-12">  
+              <table>  
+                  <tr> 
+                    <div class="col-lg-3" style="margin: 5px;">
+                      <td padding-right="20px"> <input type ="text" #input1  id="lastName" placeholder="Search by last name"> </td><br/>  
+                    </div><div class="col-lg-3" style="margin: 5px;">
+                      <td padding-right="20px"> <input type ="text" #input2 id="firstName" placeholder="Search by first name"> </td> <br/> 
+                    </div><div class="col-lg-3" style="margin: 5px;">
+                      <td padding="20px"> <input type ="text" #input3 id="userName" placeholder="Search by user name"> </td>  <br>
+                    </div>
+                    <div class="col-lg-3" style="margin: 5px;">
+                      <td padding="20px"> <input type ="text" #input4 id="id" placeholder="Search by id"> </td>  <br>
+                    </div>
+                      <!--<td padding="30px"> <input type ="text" #input4 id="id" placeholder="Search by Id"> </td>  <br>-->
+                      </tr> 
+                      <tr>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <td padding="30px"><button class="btn btn-primary hidden-xs pull-right" 
+                          (click)="onClick(input2.id,input2.value,input1.id,input1.value,input3.id,input3.value,input4.id,input4.value)">Search</button></td>
+                        </div> 
+                      </tr>
+                  <!--onClick(input2.id,input2.value) -->
+                  <!-- <button class="pull-right" mat-button color="primary" (click)="onSearch(input2.id,input2.value)"><mat-icon >search</mat-icon>Search</button> -->
+              </table> 
+  </div><br><br></div>
+  
+  <!-- <app-list-players [result]=value (clicked)="onClicked($event)"></app-list-players> -->
+  </div>
