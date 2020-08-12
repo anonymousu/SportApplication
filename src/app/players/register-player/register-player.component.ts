@@ -38,7 +38,7 @@ export class RegisterPlayerComponent implements OnInit {
       data => {
         this.id = data.id;
         console.log("player1 : " + data.id);
-        this._snackbar.open("Player " + this.id + " registered successfully!!!",'',
+        this._snackbar.open("Player " + this.id + " registered successfully!!!",'Dismiss',
         {duration: 3000,
         verticalPosition: 'top'});
         this.router.navigate(['/players',this.id]);

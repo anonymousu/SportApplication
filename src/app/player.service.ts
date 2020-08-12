@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, of } from 'rxjs';
 import { Player } from './model/player';
 
 @Injectable({
@@ -41,20 +41,21 @@ export class PlayerService {
     return this.httpClient.delete(`${this.url}/${id}` , {responseType : 'text'});
   }
 
-  deletePlayers(ids: string): Observable<any>{
-    console.log("url is: " + `${this.url1}/delete/players?${ids}}`);
-    return this.httpClient.delete(`${this.url1}/delete/players?${ids}`)
-    /*console.log("ids to delete: " + ids.length);
+  deletePlayers(ids: number[]): Observable<any>{
+    //console.log("url is: " + `${this.url1}/delete/players?${ids}}`);
+    //return this.httpClient.delete(`${this.url1}/delete/players?${ids}`)
     const data = {'ids' : ids};
-    const options = {
-			headers: new HttpHeaders({
-				'Accept': 'application/json',
-				'Content-Type': 'application/json'
-			}),
-			responseType: 'text' as 'json'
-		};
-    const resp = this.httpClient.post(`${this.url1}/delete/players}`,data, options);
-    return resp;*/
+    console.log("ids to delete: " + ids.length + "data : " + data);
+     const options = {
+		 	headers: new HttpHeaders({
+		 		'Accept': 'application/json',
+		 		'Content-Type': 'application/json'
+		 	}),
+		 	responseType: 'text' as 'json'
+		 };
+    const resp = this.httpClient.post(`${this.url1}/delete/players`,data,options);
+    return resp;
+    return of({});
   }
 
   searchPlayer(searchTerm: string): Observable<any>{
